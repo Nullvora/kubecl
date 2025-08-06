@@ -4,15 +4,12 @@
 <br />
 <br />
 
-[![Discord](https://img.shields.io/discord/1038839012602941528.svg?color=7289da&&logo=discord)](https://discord.gg/KSBSPhAUCc)
-[![Current Crates.io Version](https://img.shields.io/crates/v/cubecl.svg)](https://crates.io/crates/cubecl)
-[![Minimum Supported Rust Version](https://img.shields.io/crates/msrv/cubecl)](https://crates.io/crates/burn)
-[![Test Status](https://github.com/tracel-ai/cubecl/actions/workflows/ci.yml/badge.svg)](https://github.com/tracel-ai/cubecl/actions/workflows/test.yml)
+[![Test Status](https://github.com/tracel-ai/cubecl/actions/workflows/ci.yml/badge.svg)](https://github.com/Nullvora/kubecl/actions)
 ![license](https://shields.io/badge/license-MIT%2FApache--2.0-blue)
 <br />
-[![NVIDIA](https://img.shields.io/badge/nvidia-cuda-82b432)](https://github.com/tracel-ai/cubecl/tree/main/crates/cubecl-cuda)
-[![AMD](https://img.shields.io/badge/amd-rocm-c22b23)](https://github.com/tracel-ai/cubecl/tree/main/crates/cubecl-wgpu)
-[![WGPU](https://img.shields.io/badge/cross_platform-wgpu-008855)](https://github.com/tracel-ai/cubecl/tree/main/crates/cubecl-wgpu)
+[![NVIDIA](https://img.shields.io/badge/nvidia-cuda-82b432)](#)
+[![AMD](https://img.shields.io/badge/amd-rocm-c22b23)](#)
+[![WGPU](https://img.shields.io/badge/cross_platform-wgpu-008855)](#)
 
 ---
 
@@ -230,19 +227,14 @@ Even if the benchmarks may add some overhead when running the application for th
 It is usually a no-brainer trade-off for throughput-oriented programs such as deep learning models.
 You can even ship the autotune cache with your program, reducing cold start time when you have more control over the deployment target.
 
-## Resource
-
-For now we don't have a lot of resources to learn, but you can look at the [matrix multiplication library](/crates/cubecl-matmul/README.md) to see how CubeCL can be used.
-If you have any questions or want to contribute, don't hesitate to join the [Discord](https://discord.gg/KSBSPhAUCc).
-
 ## Disclaimer & History
 
 CubeCL is currently in **alpha**.
 
-While CubeCL is used in [Burn](https://burn.dev), there are still a lot of rough edges; it isn't refined yet.
+While CubeCL is used in [Mabor](https://mabor.dev), there are still a lot of rough edges; it isn't refined yet.
 The project started as a WebGPU-only backend for Burn.
 As we optimized it, we realized that we needed an intermediate representation (IR) that could be optimized then compiled to WGSL.
 Having an IR made it easy to support another compilation target, so we made a CUDA runtime.
-However, writing kernels directly in that IR wasn't easy, so we created a Rust frontend using the [syn](https://github.com/dtolnay/syn) crate.
+However, writing kernels directly in that IR wasn't easy, so we created a Rust frontend using the [syn](#) crate.
 Navigating the differences between CUDA and WebGPU, while leveraging both platforms, forced us to come up with general concepts that worked everywhere.
 Hence, CubeCL was born!
